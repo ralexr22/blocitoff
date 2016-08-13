@@ -4,7 +4,4 @@ class UsersController < ApplicationController
     @user = User.find(user_id)
   end
 
-  def item
-    @item = Item.new
-  end
 end
