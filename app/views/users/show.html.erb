@@ -1,8 +1,30 @@
-<div class="container">
+<div class="well well-sm">
   <div>
-  <h3><small>Name: </small><%= current_user.email %></h3>
+  <h5><%= current_user.email %></h5>
   </div>
-  <div>
-    <h4>To Do Lists</h4>
+</div>
+
+<p>
+<div class="col-md-8">
+  <%= form_for [@user, @item] do |f| %>
+    <%= f.label :name %>
+    <%= f.text_field :name, placeholder: "New List"  %>
+    <%= f.submit "Save" %>
+  <% end %>
+    <div class="form-group" >
+    </div>
+  </div>
+</p>
+
+<div class="container">
+  <div class="col-md-8">
+    <table>
+      <% @items.each do |i| %>
+        <tr>
+          <td><%= @item.name %></td>
+          <td><%= link_to @items_path %></td>
+        </tr>
+      <% end %>
+    </table>
   </div>
 </div>
