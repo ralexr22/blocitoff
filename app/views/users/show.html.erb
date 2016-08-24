@@ -21,8 +21,7 @@
     <table>
       <% @items.each do |i| %>
         <tr>
-          <td><%= @item.name %></td>
-          <td><%= link_to @items_path %></td>
+          <td><%= link_to [@item, @item.user] %></td>
         </tr>
       <% end %>
     </table>
