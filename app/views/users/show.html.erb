@@ -7,8 +7,7 @@
 <p>
 <div class="col-md-8">
   <%= form_for [@user, @item] do |f| %>
-    <%= f.label :name %>
-    <%= f.text_field :name, placeholder: "New List"  %>
+    <%= f.text_field :name, placeholder: "New Item"  %>
     <%= f.submit "Save" %>
   <% end %>
     <div class="form-group" >
