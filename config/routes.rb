@@ -1,7 +1,10 @@
 Rails.application.routes.draw do
-  devise_for :users 
-  resources :users
-  get 'users/show'
+
+  devise_for :users
+  resources :users do
+    resources :items
+  end
+
   get 'welcome/index'
   root 'users#show'
   # The priority is based upon order of creation: first created -> highest priority.
