@@ -1,21 +1,23 @@
 require 'faker'
 include Faker
 
-1.times do
+5.times do
   User.create!(
     email: Faker::Internet.email,
     password: Faker::Internet.password
     )
 end
 
+users = User.all
+
 10.times do
   Item.create!(
-   user: @user_id,
+   user: users.sample,
    name: Faker::Lorem.words(4, true)
   )
 end
 
 
 puts "Seed finished"
-puts "#{User.count} created"
+puts "#{User.count} users created"
 puts "#{Item.count} items created"
