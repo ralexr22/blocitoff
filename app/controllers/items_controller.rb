@@ -6,4 +6,15 @@ class ItemsController < ApplicationController
     @item.save
     redirect_to user_path(@user)
   end
+
+  def destroy
+    @item = Item.find(params[:id])
+    @item.destroy
+    @user = User.find(params[:user_id])
+
+    respond_to do |format|
+      format.html { redirect_to user_path(@user) }
+      format.js { }
+    end
+  end
 end
