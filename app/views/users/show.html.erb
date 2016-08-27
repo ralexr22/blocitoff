@@ -19,7 +19,10 @@
   <div class="col-md-8">
     <ul class="list-group">
       <% @items.each do |item| %>
-        <li type="list" class="list-group-item"><%= item.name %></li>
+        <div id="item-<%=item.id%>">
+          <li type="list" class="list-group-item"><%= item.name %></li>
+          <span><%= link_to "", [@user, item], method: :delete, class: 'glyphicon glyphicon-ok', remote: true %></span>
+        </div>
       <% end %>
     </ul>
   </div>
